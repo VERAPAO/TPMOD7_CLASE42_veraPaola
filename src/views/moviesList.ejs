@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Películas</title>
+    <link rel='stylesheet' href='/css/style.css' />
+
+</head>
+
+<body>
+    <figure>
+        <img src="/img/logo-DH.png" alt="Logo Digital House">
+    </figure>
+    <h1>LISTADO DE PELÍCULAS</h1>
+    <br>
+    <p>
+        <a class="botonAgregar" href="/movies/add">Agregar una Pelicula</a>
+        <a class="botonVolver" href="/">inicio</a>
+
+    </p>
+
+     <!--------------- BARRA PARA HACER LA BÚSQUEDA -->
+     <div class="search-bar-list-movies-div">
+        <form action="/movies/search" method="GET">
+            <input type="text" class="search-input-list-movies" name="title" placeholder="Escribe aquí el nombre de la Película">
+            <button type="submit" class="search-button-list-movies">Buscar una Película</button>
+        </form>
+    </div>
+    <br>
+  
+    <% if (error) { %>
+        <div style="background-color: #FA8072; color: white; padding: 15px; border-radius: 8px; text-align: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-bottom: 20px;">
+            <p style="font-size: 1.2rem; margin: 0;"><%= error %></p>
+        </div>
+    <% } %>
+   
+    <ul>
+        <% for( let i = 0; i < movies.length; i++ ) { %>
+        <li>
+            <a href="/movies/detail/<%= movies[i].id %>"><%= movies[i].title %></a>
+        </li>
+        <% } %>
+
+    </ul>
+</body>
+
+</html>

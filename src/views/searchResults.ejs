@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Búsqueda</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <figure>
+        <img src="/img/logo-DH.png" alt="Logo Digital House">
+    </figure>
+    <h1>RESULTADOS DE BÚSQUEDA</h1>
+    <br>
+
+    <div class="movie-details">
+        <h2><%= movieFromApi.title %></h2>
+        <p><strong>Género:</strong> <%= movieFromApi.genre %></p>
+        <p><strong>ID de IMDb:</strong> <%= movieFromApi.id %></p>
+    </div>
+
+    <br>
+    <a class="botonVolver" href="/movies">Volver al Listado</a>
+
+</body>
+
+</html>
